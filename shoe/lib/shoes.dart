@@ -24,7 +24,6 @@ class _ShoeCardState extends State<ShoeCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Shoe Image
           Expanded(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
