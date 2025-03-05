@@ -11,19 +11,19 @@ class ShoeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ShoeStoreScreen(),
+      home: MyApp(),
     );
   }
 }
 
-class ShoeStoreScreen extends StatefulWidget {
-  const ShoeStoreScreen({super.key});
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
   @override
   _ShoeStoreScreenState createState() => _ShoeStoreScreenState();
 }
 
-class _ShoeStoreScreenState extends State<ShoeStoreScreen> {
+class _ShoeStoreScreenState extends State<MyApp> {
   final List<String> categories = ["All", "Nike", "Jordan", "Adidas", "Reebok"];
   String selectedCategory = "All";
 
