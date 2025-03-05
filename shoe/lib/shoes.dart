@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shoe/info.dart';
 
 class ShoeCard extends StatefulWidget {
-  final Map<String, dynamic> shoe;
+  final Shoe shoe;
   const ShoeCard({super.key, required this.shoe});
 
   @override
@@ -28,7 +29,7 @@ class _ShoeCardState extends State<ShoeCard> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
-                widget.shoe["image"],
+                widget.shoe.image,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
@@ -41,7 +42,7 @@ class _ShoeCardState extends State<ShoeCard> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8),
             child: Text(
-              widget.shoe["name"],
+              widget.shoe.name,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -58,12 +59,12 @@ class _ShoeCardState extends State<ShoeCard> {
                 Icon(Icons.star, color: Colors.amber, size: 16),
                 SizedBox(width: 4),
                 Text(
-                  "${widget.shoe["rating"]}",
+                  "${widget.shoe.rating}",
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(width: 4),
                 Text(
-                  "(${widget.shoe["reviews"]} Reviews)",
+                  "(${widget.shoe.reviews} Reviews)",
                   style: TextStyle(fontSize: 12, color: Colors.grey),
                 ),
               ],
@@ -76,7 +77,7 @@ class _ShoeCardState extends State<ShoeCard> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
             child: Text(
-              "\$${widget.shoe["price"]}",
+              "\$${widget.shoe.price}",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
