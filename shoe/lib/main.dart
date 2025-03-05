@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'shoes.dart';
 
 void main() {
   runApp(ShoeApp());
@@ -177,87 +178,6 @@ class _ShoeStoreScreenState extends State<MyApp> {
                 final shoe = filteredShoes[index];
                 return ShoeCard(shoe: shoe);
               },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class ShoeCard extends StatelessWidget {
-  final Map<String, dynamic> shoe;
-  const ShoeCard({super.key, required this.shoe});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-              color: Colors.grey.shade200, blurRadius: 5, spreadRadius: 2),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Shoe Image
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                shoe["image"],
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-
-          SizedBox(height: 8),
-
-          // Shoe Name
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8),
-            child: Text(
-              shoe["name"],
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-
-          SizedBox(height: 4),
-
-          // Rating & Reviews
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8),
-            child: Row(
-              children: [
-                Icon(Icons.star, color: Colors.amber, size: 16),
-                SizedBox(width: 4),
-                Text(
-                  "${shoe["rating"]}",
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(width: 4),
-                Text(
-                  "(${shoe["reviews"]} Reviews)",
-                  style: TextStyle(fontSize: 12, color: Colors.grey),
-                ),
-              ],
-            ),
-          ),
-
-          SizedBox(height: 4),
-
-          // Price
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            child: Text(
-              "\$${shoe["price"]}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
         ],
